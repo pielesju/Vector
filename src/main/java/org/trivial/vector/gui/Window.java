@@ -5,6 +5,7 @@
  */
 package org.trivial.vector.gui;
 
+import javafx.scene.layout.Pane;
 import org.trivial.vector.gui.menubar.TopMenu;
 import javafx.scene.layout.BorderPane;
 import org.trivial.vector.gui.drawing.VectorCanvas;
@@ -22,7 +23,7 @@ public class Window extends BorderPane {
         this.setLeft(new ToolBar());
         this.setRight(new OptionsBar());
         this.setBottom(new StatusBar());
-        this.setCenter(new VectorCanvas());
+        this.setCenter(new EditorPane());
     }
 
 }

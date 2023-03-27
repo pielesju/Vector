@@ -12,6 +12,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import org.trivial.vector.Constants;
+import org.trivial.vector.gui.drawing.Action;
 import org.trivial.vector.gui.drawing.VectorCanvas;
 
 /**
@@ -30,19 +31,19 @@ public class ToolBar extends VBox {
         this.getChildren().addAll(getObjectsBox(), getToolBox());
     }
 
-    private GridPane getObjectsBox() {
-        GridPane gridPane = new GridPane();
+    private VBox getObjectsBox() {
+        VBox gridPane = new VBox();
         gridPane.prefHeightProperty().bind(this.heightProperty().divide(2));
 
-        Button createRectangle = new Button("R");
+        Button createRectangle = new Button("RECT");
         createRectangle.setOnAction(e -> VectorCanvas.setCurrentShape(new Rectangle()));
         createRectangle.setStyle(String.format("-fx-background-color:%s;-fx-color:%s;", Constants.COLOR_2,
          Constants.COLOR_1));
 
-        Button createCircle = new Button("C");
+        Button createCircle = new Button("CIRC");
         createCircle.setOnAction(e -> VectorCanvas.setCurrentShape(new Circle()));
 
-        Button createLine = new Button("L");
+        Button createLine = new Button("LINE");
         createLine.setOnAction(e -> VectorCanvas.setCurrentShape(new Line()));
 
         Button createRoundedRect = new Button("RR");
@@ -63,19 +64,19 @@ public class ToolBar extends VBox {
         Button createText = new Button("T");
         createText.setOnAction(e -> currentObject = 9);
 
-        gridPane.add(createRectangle, 0, 0);
-        gridPane.add(createRoundedRect, 1, 0);
+        gridPane.getChildren().add(createRectangle);
+        gridPane.getChildren().add(createRoundedRect);
 
-        gridPane.add(createCircle, 0, 1);
-        gridPane.add(createEllipse, 1, 1);
+        gridPane.getChildren().add(createCircle);
+        gridPane.getChildren().add(createEllipse);
 
-        gridPane.add(createLine, 0, 2);
-        gridPane.add(createPolyLine, 1, 2);
+        gridPane.getChildren().add(createLine);
+        gridPane.getChildren().add(createPolyLine);
 
-        gridPane.add(createPolygon, 0, 3);
-        gridPane.add(createPath, 1, 3);
+        gridPane.getChildren().add(createPolygon);
+        gridPane.getChildren().add(createPath);
 
-        gridPane.add(createText, 0, 4);
+        gridPane.getChildren().add(createText);
 
         return gridPane;
     }
@@ -83,15 +84,19 @@ public class ToolBar extends VBox {
     private GridPane getToolBox() {
         GridPane gridPane = new GridPane();
         
-        Button selectRect = new Button("");
+        Button selectRect = new Button("S");
+        selectRect.setOnAction(e -> VectorCanvas.setAction(Action.SELECT));
         Button moveSelectedObjects = new Button("");
         Button lassoSelection = new Button("");
         Button moveSelection = new Button("");
+        Button remove = new Button("R");
+        remove.setOnAction(e -> VectorCanvas.setAction(Action.REMOVE));
         
         gridPane.add(selectRect, 0, 0);
-        gridPane.add(moveSelectedObjects, 1, 0);
-        gridPane.add(lassoSelection, 0, 1);
-        gridPane.add(moveSelection, 1, 1);
+        gridPane.add(moveSelectedObjects, 0, 1);
+        gridPane.add(lassoSelection, 0, 2);
+        gridPane.add(moveSelection, 0, 3);
+        gridPane.add(remove, 0, 4);
 
         return gridPane;
     }

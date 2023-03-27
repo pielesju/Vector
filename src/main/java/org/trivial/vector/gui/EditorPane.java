@@ -66,8 +66,7 @@ public class EditorPane extends ScrollPane {
     }
 
     private void setEditorOptions() {
-        this.setStyle("-fx-background-color: transparent");
-        this.setStyle("-fx-focus-color: transparent;-fx-faint-focus-color:transparent;");
+        this.setStyle(String.format("-fx-background: %s;", Constants.COLOR_2));
         this.setHbarPolicy(ScrollBarPolicy.ALWAYS);
         this.setVbarPolicy(ScrollBarPolicy.ALWAYS);
     }
@@ -84,7 +83,7 @@ public class EditorPane extends ScrollPane {
 
     private StackPane getCanvas() {
         holder.getChildren().add(new VectorCanvas());
-        holder.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_1));
+        holder.setStyle(String.format("-fx-background-color: %s;", Constants.COLOR_2));
         holder.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
