@@ -8,6 +8,7 @@ package org.trivial.vector.gui;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import org.trivial.vector.Constants;
 import org.trivial.vector.SystemInfo;
 
 /**
@@ -27,9 +28,9 @@ public class StatusBar extends HBox {
     }
     
     private void setOptions() {
-        this.setMinHeight(32);
-        this.setMaxHeight(32);
-        this.setStyle("-fx-background-color:white;");
+        this.setMinHeight(20);
+        this.setMaxHeight(20);
+        this.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_1));
         this.setPadding(new Insets(0, 200, 0, 50));
     }
     

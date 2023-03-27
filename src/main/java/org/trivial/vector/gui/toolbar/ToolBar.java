@@ -11,7 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
+import org.trivial.vector.Constants;
 import org.trivial.vector.gui.drawing.VectorCanvas;
 
 /**
@@ -25,7 +25,7 @@ public class ToolBar extends VBox {
     public ToolBar() {
         this.setMinWidth(50);
         this.setMaxWidth(50);
-        this.setStyle("-fx-background-color: white");
+        this.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_1));
 
         this.getChildren().addAll(getObjectsBox(), getToolBox());
     }
@@ -36,6 +36,8 @@ public class ToolBar extends VBox {
 
         Button createRectangle = new Button("R");
         createRectangle.setOnAction(e -> VectorCanvas.setCurrentShape(new Rectangle()));
+        createRectangle.setStyle(String.format("-fx-background-color:%s;-fx-color:%s;", Constants.COLOR_2,
+         Constants.COLOR_1));
 
         Button createCircle = new Button("C");
         createCircle.setOnAction(e -> VectorCanvas.setCurrentShape(new Circle()));

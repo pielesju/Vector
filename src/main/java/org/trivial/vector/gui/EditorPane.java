@@ -16,6 +16,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Scale;
+import org.trivial.vector.Constants;
 import org.trivial.vector.gui.drawing.VectorCanvas;
 import org.trivial.xc.keycombinations.Keys;
 
@@ -83,7 +84,7 @@ public class EditorPane extends ScrollPane {
 
     private StackPane getCanvas() {
         holder.getChildren().add(new VectorCanvas());
-        holder.setStyle("-fx-background-color: white;");
+        holder.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_1));
         holder.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 

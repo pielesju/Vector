@@ -5,9 +5,8 @@
  */
 package org.trivial.vector.gui.menubar;
 
-import java.util.ArrayList;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import org.trivial.vector.Constants;
 
 /**
  *
@@ -26,6 +25,6 @@ public class TopMenu extends MenuBar {
                 new EffectsMenu(),
                 new HelpMenu());
         
-        this.setStyle("-fx-background-color: white;");
+        this.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_1));
     }
 }

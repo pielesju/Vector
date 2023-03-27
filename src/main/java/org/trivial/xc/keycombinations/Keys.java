@@ -13,12 +13,16 @@ import javafx.scene.input.KeyCombination;
  *
  * @author jpieles
  */
-public class Keys {
+public abstract class Keys {
 
-    public static KeyCombination zoomIn = new KeyCodeCombination(KeyCode.PLUS,
+    private Keys() {
+
+    }
+
+    public static final KeyCombination zoomIn = new KeyCodeCombination(KeyCode.PLUS,
             KeyCombination.CONTROL_DOWN);
 
-    public static KeyCombination zoomOut = new KeyCodeCombination(KeyCode.MINUS,
+    public static final KeyCombination zoomOut = new KeyCodeCombination(KeyCode.MINUS,
             KeyCombination.CONTROL_DOWN);
 
 }

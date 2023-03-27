@@ -11,7 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
+import org.trivial.vector.Constants;
 
 /**
  *
@@ -24,7 +24,7 @@ public class OptionsBar extends VBox {
     public OptionsBar() {
         this.setMinWidth(200);
         this.setMaxWidth(200);
-        this.setStyle("-fx-background-color: white");
+        this.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_1));
         
         Label label = new Label("Optionen zu Object");
         

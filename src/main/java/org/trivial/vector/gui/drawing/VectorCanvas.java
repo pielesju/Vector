@@ -5,14 +5,13 @@
  */
 package org.trivial.vector.gui.drawing;
 
-import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import org.trivial.vector.Constants;
 import org.trivial.vector.gui.optionsbar.OptionsBar;
-import org.trivial.vector.gui.toolbar.ToolBar;
 import org.trivial.xc.utils.TrivialMath;
 
 /**
@@ -21,8 +20,9 @@ import org.trivial.xc.utils.TrivialMath;
  */
 public class VectorCanvas extends Pane {
 
-    public static Shape currentShape;
-    Double lastX, lastY;
+    private static Shape currentShape;
+    Double lastX;
+    Double lastY;
 
     public VectorCanvas() {
         setCanvasSettings();
@@ -36,6 +36,7 @@ public class VectorCanvas extends Pane {
     private void setCanvasSettings() {
         this.setWidth(300);
         this.setHeight(200);
+        this.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_2));
     }
 
     private void setCanvasEvents() {

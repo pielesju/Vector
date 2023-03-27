@@ -16,20 +16,22 @@ import org.trivial.vector.Constants;
  *
  * @author jpieles
  */
-public class SVGParser {
+public abstract class SVGParser {
+
+    private SVGParser() {
+
+    }
 
     public static String createSVGFile(ArrayList<Shape> objects) {
-        String svg = "";
-
-        svg += Constants.SVG_HEADER(320, 240);
+        StringBuilder svg = new StringBuilder(Constants.SVG_HEADER(320, 240));
 
         for (Shape s : objects) {
-            svg += generateSVGFromObject(s);
+            svg.append(generateSVGFromObject(s));
         }
 
-        svg += Constants.SVG_CLOSING_TAG;
+        svg.append(Constants.SVG_CLOSING_TAG);
 
-        return svg;
+        return svg.toString();
     }
 
     private static String generateSVGFromObject(Shape s) {
