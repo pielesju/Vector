@@ -3,7 +3,7 @@ package org.trivial.vector;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.trivial.vector.gui.Window;
+import org.trivial.view.Window;
 
 public class App extends Application {
 
@@ -13,11 +13,11 @@ public class App extends Application {
         stage.show();
     }
 
-    private Scene getScene() {
+    private static Scene getScene() {
         return new Scene(new Window(), Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
     }
 
-    private void setStageSettings(Stage stage) {
+    private static void setStageSettings(Stage stage) {
         stage.setScene(getScene());
         stage.setMinWidth(Constants.WINDOW_WIDTH);
         stage.setMinHeight(Constants.WINDOW_HEIGHT);

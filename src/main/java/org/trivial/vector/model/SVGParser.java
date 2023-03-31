@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.trivial.vector.engine;
+package org.trivial.vector.model;
 
 import java.util.ArrayList;
 import javafx.scene.shape.Circle;

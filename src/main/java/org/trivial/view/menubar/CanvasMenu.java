@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.trivial.vector.gui.menubar;
+package org.trivial.view.menubar;
 
 import javafx.scene.control.Menu;
 
@@ -11,10 +11,10 @@ import javafx.scene.control.Menu;
  *
  * @author jpieles
  */
-public class EffectsMenu extends Menu {
+public class CanvasMenu extends Menu {
     
-    public EffectsMenu() {
-        this.setText("Effects");
+    public CanvasMenu() {
+        this.setText("Canvas");
     }
  
 }
