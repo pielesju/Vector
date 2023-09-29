@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.trivial.vector.gui;
+package org.trivial.view;
 
 import javafx.scene.Group;
 import javafx.scene.control.ScrollPane;
@@ -17,7 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Scale;
 import org.trivial.vector.Constants;
-import org.trivial.vector.gui.drawing.VectorCanvas;
+import org.trivial.view.drawing.VectorCanvas;
 import org.trivial.xc.keycombinations.Keys;
 
 /**
@@ -83,10 +83,9 @@ public class EditorPane extends ScrollPane {
 
     private StackPane getCanvas() {
         holder.getChildren().add(new VectorCanvas());
-        holder.setStyle(String.format("-fx-background-color: %s;", Constants.COLOR_2));
-        holder.setBorder(new Border(new BorderStroke(Color.BLACK,
-                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
+        holder.setStyle(String.format("-fx-background-color: linear-gradient(%s, %s);", Constants.COLOR_2,
+                Constants.COLOR_1));
         return holder;
     }
 

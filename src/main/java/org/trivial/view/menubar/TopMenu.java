@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.trivial.vector.gui.menubar;
+package org.trivial.view.menubar;
 
 import javafx.scene.control.MenuBar;
 import org.trivial.vector.Constants;
@@ -25,6 +25,7 @@ public class TopMenu extends MenuBar {
                 new EffectsMenu(),
                 new HelpMenu());
         
-        this.setStyle(String.format("-fx-background-color:%s;", Constants.COLOR_1));
+        this.setStyle(String.format("-fx-background-color: linear-gradient(%s, %s);", Constants.COLOR_2,
+                Constants.COLOR_1));
     }
 }

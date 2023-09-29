@@ -1,4 +1,4 @@
-package org.trivial.vector.gui.drawing;
+package org.trivial.vector.model;
 
 public enum Action {
     DRAW,
