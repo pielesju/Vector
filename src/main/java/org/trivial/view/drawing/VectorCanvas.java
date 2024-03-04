@@ -36,8 +36,6 @@ public class VectorCanvas extends Pane {
         currentShape = shape;
     }
 
-
-
     private void setCanvasSettings() {
         this.setMinWidth(300);
         this.setMinHeight(200);
